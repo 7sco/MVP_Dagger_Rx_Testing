@@ -3,6 +3,9 @@ package com.example.franciscoandrade.androidapplication.root;
 
 import android.app.Application;
 
+import com.example.franciscoandrade.androidapplication.login.LoginModel;
+import com.example.franciscoandrade.androidapplication.login.LoginModule;
+
 
 //create application component by extending application
 public class App extends Application{
@@ -20,6 +23,7 @@ public class App extends Application{
 
         component= DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
+                .loginModule(new LoginModule())
                 .build();
 
     }
